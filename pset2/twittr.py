@@ -11,11 +11,11 @@
 # if char is not in vowels, append to result
 # return result str
 
-input = input("Input: ")
+text = input("Input: ")
 vowels = "AEIOUaeiou"
 result = ""
 
-for c in input:
+for c in text:
     if c not in vowels:
         result += c
 
