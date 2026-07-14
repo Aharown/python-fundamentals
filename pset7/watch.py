@@ -26,11 +26,11 @@ import re
 # https://www.youtube.com/embed/xvFZjo5PgG0
 # Structure watch.py as follows, wherein you’re welcome to modify main and/or implement other functions as you see fit, but you may not import any other libraries. You’re welcome, but not required, to use re and/or sys.
 
-# pseudocode
+#pseudocode
 # import re
 # call re search and pass pattern, assign to match variable
 # use conditional if match
-# then return new short string else return none
+# then use re.sub() and return new short string else return none
 
 # Time: O(n) search scans input str scales with size of input
 # Space: O(1) no added DSs
@@ -41,9 +41,7 @@ def main():
 
 
 def parse(s):
-    match = re.search(
-        r'src="https?://(?:www\.)?youtube\.com/embed/([a-zA-Z0-9_-]+)"', s
-    )
+    match = re.search(r'src="https?://(?:www\.)?youtube\.com/embed/([a-zA-Z0-9_-]+)"', s)
     if match:
         return f"https://youtu.be/{match.group(1)}"
     return None
